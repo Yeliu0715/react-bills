@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import React, { useMemo, useState } from 'react'
+import { billTypeToName } from '@/contants'
 import './index.scss'
 import Icon from '../../../components/icons'
 
@@ -51,7 +52,7 @@ const DailyBill = (props) => {
             return (
                 <div className="bill" key={item.id}>
                     <div className="detail">
-                        <div className="billType"> <Icon type={item.useFor}/> {item.useFor}</div>
+                        <div className="billType"> <Icon type={item.useFor}/> {billTypeToName[item.useFor]}</div>
                     </div>
                     <div className={classNames('money', item.type)}>
                         {item.money.toFixed(2)}
